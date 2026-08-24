@@ -21,6 +21,7 @@ endif()
 
 if("${CMAKE_Fortran_COMPILER_ID}" STREQUAL "IntelLLVM")
     set( C_PREPROCESS_FLAG CACHE STRING "C Preprocessor Flag")
+    add_compile_options($<$<COMPILE_LANGUAGE:Fortran>:-fpp>)
 endif()
 
 if("${CMAKE_Fortran_COMPILER_ID}" STREQUAL "PGI")
